@@ -58,11 +58,11 @@ P2P-Dropbox
 
 	Explanation of command:
 
-	*-a - adds the folder*
+	`*-a - adds the folder*`
 
-	*-v - increase verbosity*
+	`*-v - increase verbosity*`
 
-	*-s - restart dbox service*
+	`*-s - restart dbox service*`
 
 
 	If you do not give -s as an option and want to start the syncing, type the following command to start dbox service -
