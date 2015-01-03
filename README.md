@@ -16,7 +16,7 @@ P2P-Dropbox
 * Linux [*inotify*](http://man7.org/linux/man-pages/man7/inotify.7.html) API used to detect changes made in files/folders.
 * [*rsync*](http://linux.about.com/library/cmd/blcmdl1_rsync.htm) utility used to efficiently propagate changes across shared folders.
 
-For detailed implementation and design details, refer to the document P2P-Dropbox.pdf included.
+*For detailed implementation and design details, refer to the document P2P-Dropbox.pdf included.*
 
 **SYSTEM COMPATIBILITY**
 
@@ -44,7 +44,7 @@ For detailed implementation and design details, refer to the document P2P-Dropbo
 
 1. In case you're using a proxy, look up your external ip address by typing the following.
 
-        **$hamachi <enter> **
+        $hamachi [enter]
         Look up your ip in the 'address' section.
 
 2. For testing out the program, you can first try to sync a folder locally. Three command-line tools are included, namely "dbconfig" "dbstatus" and "dropbox-start". We are mainly to use the first two. Type "dbconfig -h" and "dbstatus -h" to get help.
