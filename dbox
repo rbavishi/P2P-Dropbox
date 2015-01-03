@@ -1,0 +1,67 @@
+#!/bin/sh
+###BEGIN INIT INFO
+#
+# Provides : Dropbox-Inotify
+# Required-Start : 
+# Required-Stop  : 
+# chkconfig: 2345 60 80
+# Short-Description : Dropbox init.d
+# Description : Dropbox|Inotify script for starting watch-cum-sync service
+#
+### END INIT INFO
+PROCESS_NAME="dropbox-inotify"
+PROG_NAME="dropbox-start"
+USER_NAME_SERVICE=$(cat /etc/dropbox-username.txt)
+do_start() {
+	SSHD_STATUS_MSG=$(service sshd status)
+	SSHD_STATUS=$(echo $?)
+	if [ $SSHD_STATUS != 0 ]; then
+		echo "Service sshd not running. Please run command - sudo service sshd start"
+	else
+		PID=$(pgrep $PROCESS_NAME)
+		EVAL_EXISTS=$(echo $?)
+		if [ $EVAL_EXISTS == 0  ]; then
+			echo ""
+		else
+			if [ $UID -ne 0 ]; then
+				$PROG_NAME
+			else
+				su $USER_NAME_SERVICE -c $PROG_NAME
+			fi
+		fi
+	fi
+}
+
+do_stop() {
+	PID=$(pgrep $PROCESS_NAME)
+	EVAL_EXISTS=$(echo $?)
+	if [ $EVAL_EXISTS == 0 ]; then
+		pkill --signal=SIGINT $PROCESS_NAME
+	else
+		echo ""
+	fi
+}
+
+case "$1" in
+	start)
+		do_start
+		exit 0
+	;;
+	stop)
+		do_stop
+		exit 0
+	;;
+	restart|reload)
+		do_stop
+		do_start
+		exit 0
+	;;
+	**)
+		echo "No args given."
+		exit 1
+	;;
+esac
+
+
+
+

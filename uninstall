@@ -1,0 +1,13 @@
+#!/bin/sh
+rm /etc/init.d/dbox
+rm /etc/dropbox.conf
+rm /bin/dbconfig
+rm /bin/dbstatus
+rm /bin/dropbox-start
+rm /bin/dropbox-inotify
+rm /etc/dropbox-username.txt
+rm /etc/rc.d/rc5.d/S60dbox
+rm /etc/rc.d/rc4.d/S60dbox
+rm /etc/rc.d/rc3.d/S60dbox
+rm /etc/rc.d/rc2.d/S60dbox
+systemctl disable sshd.service
