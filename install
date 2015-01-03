@@ -20,34 +20,6 @@ cp ."/dbox" "/etc/init.d"
 touch "/etc/dropbox.conf"
 chmod 666 "/etc/dropbox.conf"
 chmod 755 "/etc/init.d/dbox"
-echo "Resolving dependencies..."
-echo "Installing sshpass - required to use the software..."
-echo "Extracting Files..."
-RESULT_EXTRACT_SSH=$(tar -xvzf sshpass.tar.gz)
-cd sshpass-1.05
-./configure
-make
-make install
-cd ..
-rm -R sshpass-1.05
-echo "Installing Hamachi - required for connecting to different users..."
-RESULT_KERNEL_CONFIG=$(getconf LONG_BIT)
-if [ $RESULT_KERNEL_CONFIG == 64 ]; then
-	tar -xvzf hamachi-64.tgz
-	cd logmein-hamachi-2.1.0.119-x64
-	./install.sh
-	cd ..
-	rm -R logmein-hamachi-2.1.0.119-x64
-else 
-	tar -xvzf hamachi-32.tgz
-	cd logmein-hamachi-2.1.0.119-x86
-	./install.sh
-	cd ..
-	rm -R logmein-hamachi-2.1.0.119-x86
-fi
 echo "Software installed!"
 systemctl enable dbox.service
 systemctl enable sshd.service
-systemctl enable logmein-hamachi.service
-service sshd start
-service logmein-hamachi start

@@ -1,9 +1,9 @@
 P2P-Dropbox
 ===========
 
-Peer-to-peer file syncing application
-Project Title - P2P Dropbox
-Project Mentor - Mr. Arbaz Khan
+A Linux application for back-up and syncing of files between two or more peers.
+-------------------------------------------------------------------------------
+
 
 **INSTALLATION PROCEDURE** 
 1. Run the install script present in this folder. Run the following commands -
