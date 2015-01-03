@@ -58,11 +58,11 @@ P2P-Dropbox
 
 	Explanation of command:
 
-	`*-a - adds the folder*`
+	`-a - adds the folder`
 
-	`*-v - increase verbosity*`
+	`-v - increase verbosity`
 
-	`*-s - restart dbox service*`
+	`-s - restart dbox service`
 
 
 	If you do not give -s as an option and want to start the syncing, type the following command to start dbox service -
@@ -90,11 +90,11 @@ P2P-Dropbox
 
 	Usage:
 
-	*-c - Show the config file.*
+	`-c - Show the config file.`
 
-	*-a - Show the syncing status for folders for all the users.*
+	`-a - Show the syncing status for folders for all the users.`
 
-	*-s - Show the "already-synced" files as well.*
+	`-s - Show the "already-synced" files as well.`
 
 **UNINSTALLING THE SOFTWARE**
 
