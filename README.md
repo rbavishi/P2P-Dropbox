@@ -28,30 +28,31 @@ P2P-Dropbox
 
 1. Run the install script present in this folder. Run the following commands -
 
-	 $chmod +x install
+  `$chmod +x install`
+  
+  `$sudo ./install`
 
-	 $sudo ./install
-
- 	Running the script as sudo is necessary as access to certain folders is required.
+  Running the script as sudo is necessary as access to certain folders is required.
 
 2. The software will be installed. Verify that the sshd and logmein-hamachi services(in case of proxy) are running by typing the following commands.
 
-	**$service sshd status**
-
-	**$sudo service logmein-hamachi start (in case of proxy)**
+  `$service sshd status`
+  
+  `$sudo service logmein-hamachi start (in case of proxy)`
 
 **USING THE PROGRAM** 	(Please make sure you are connected to the internet)
 
 1. In case you're using a proxy, look up your external ip address by typing the following.
 
-        $hamachi [enter]
-        Look up your ip in the 'address' section.
+  `$hamachi [enter]`
+  
+  `Look up your ip in the 'address' section.`
 
 2. For testing out the program, you can first try to sync a folder locally. Three command-line tools are included, namely "dbconfig" "dbstatus" and "dropbox-start". We are mainly to use the first two. Type "dbconfig -h" and "dbstatus -h" to get help.
 
 3. For adding a folder, say "[path]/Picasso" which is to be synced to another folder say "[path]/Pollock", with USER being your username, we type:
 
-	__$dbconfig -avs "[path]/Picasso" "USER@<your ip_address>" "[path]/Pollock"__
+  `$dbconfig -avs "[path]/Picasso" "USER@<your ip_address>" "[path]/Pollock"`
 
 	It will ask for your own password, as it needs to be able to login passwordless in the future.
 
@@ -66,26 +67,26 @@ P2P-Dropbox
 
 	If you do not give -s as an option and want to start the syncing, type the following command to start dbox service -
 
-	**$service dbox start**
+  `$service dbox start`
 	
 	As a reminder, please make sure the service sshd is running. If it is inactive, type:
 
-	**$sudo service sshd start**
+  `$sudo service sshd start`
 
 4. (Only for proxy-using networks)If you want to test the software with another computer other than your own. You'll have to first create a network with :
 
-	**$hamachi create [network_name] [password]**
+  `$hamachi create [network_name] [password]`
 
 	Then with the other computer, join the network with
 
-	**$hamachi join [network name] [password]**
+  `$hamachi join [network name] [password]`
 
 	Ping the other computer to make sure the network is alive. Then repeat the 3rd step above with only the USER variable changed to the username of the other computer.
 
 5. If you want to look up the syncing status, use the dbstatus command. Type "dbstatus -h" to get help.
 	Example:
 
-	**$dbstatus -acs**
+  `dbstatus -acs`
 
 	Usage:
 
@@ -99,7 +100,8 @@ P2P-Dropbox
 
 1. If you want to uninstall the program, in the project folder, run the uninstall script by:
 
-	__$sudo chmod +x [path\_to\_script]/uninstall__
+  `$sudo chmod +x [path\_to\_script]/uninstall`
+  
+  `$sudo [path\_to\_script]/uninstall`
 
- 	__$sudo [path\_to\_script]/uninstall__
 
