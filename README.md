@@ -27,11 +27,10 @@ P2P-Dropbox
 **INSTALLATION PROCEDURE** 
 
 1. Run the install script present in this folder. Run the following commands -
-
-  `$chmod +x install`
-  
-  `$sudo ./install`
-
+```bash
+  $chmod +x install
+  $sudo ./install
+```
   Running the script as sudo is necessary as access to certain folders is required.
 
 2. The software will be installed. Verify that the sshd and logmein-hamachi services(in case of proxy) are running by typing the following commands.
